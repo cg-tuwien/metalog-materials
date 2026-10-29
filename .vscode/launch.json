@@ -1,0 +1,231 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "RunMetalogMetaBSDFMaker",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.fit.run_meta_bsdf_maker",
+            "args": [
+                // "--output-dir", "output/standard_vs_mixture/standard",
+                // DIFFUSE
+                // "--material-type", "diffuse",
+                // "--material-name", "meta_diffuse",
+                // ROUGHCONDUCTOR
+                // "--material-type", "roughconductor",
+                // "--material-name", "meta_roughconductor",
+                // "--alpha-u", "0.7",
+                // "--alpha-v", "0.1",
+                // MEASURED BSDF,
+                "--material-type", "measured",
+                "--material-name", "meta_epfl_measured",
+                "--measured-material-path", "measured_materials/DupuyAndJakob2018/isotropic_rgb/cc_nothern_aurora_rgb.bsdf",
+                // "--measured-material-path", "measured_materials/DupuyAndJakob2018/anisotropic_rgb/aniso_sari_silk_2color_rgb.bsdf",
+                // HYPERPARAMS
+                "--min-regularization-marginal", "0.0001",
+                "--max-regularization-marginal", "0.0001",
+                "--min-regularization-conditional", "0.0001",
+                "--max-regularization-conditional", "0.0001",
+                "--max-num-terms", "6",
+                "--min-metalog-resolution-marginal", "16",
+                "--max-metalog-resolution-marginal", "16",
+                "--min-metalog-resolution-conditional", "16",
+                "--max-metalog-resolution-conditional", "16",
+                "--n-conditionals", "6",
+                "--ml-phi-res", "-1",
+                "--ml-theta-res", "-1",
+                "--dhr-phi-res", "1",
+                "--dhr-theta-res", "16",
+                "--metalog-marginal", "phi",
+                "--make-probs-method", "classic",
+                "--rusinkiewicz-reparam", "true",
+                "--no-plots",
+                "--n-samples", "512000",
+                "--marginal-mode", "mixture",
+                "--conditional-mode", "mixture",
+                "--mix-k-marg", "2",
+                "--mix-k-cond", "1",
+                "--mix-metalog-term-marg", "6",
+                "--mix-metalog-term-cond", "8",
+                "--mix-alpha", "0.3",
+                "--mix-max-iters", "30",
+                "--mixture-model", "auto", // auto | mmm
+                // "--anisotropic",
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "MetalogMetaMaterial",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.render.metalog_meta_bsdf_test",
+            "args": [
+                "--metalog-bsdf-scene", "scenes/matpreview/scene_metalog_meta_mis.xml",
+                "--spp", "512",
+                "--ref-spp-high", "2048",
+                "--metalog-term", "5",
+                "--marginal-mode", "mixture",
+                "--conditional-mode", "mixture",
+                "--metalog-marginal", "phi",
+                "--benchmark-runs", "1",
+                "--metric", "FLIP",
+                "--output-format", "both",
+                "--save-images",
+                "--mis-active", "true",
+                "--rusinkiewicz-reparam",
+                "--film-width", "512",
+                "--film-height", "512",
+                // Meta Diffuse
+                // "--reference-bsdf-scene", "scenes/matpreview/scene_mitsuba_diffuse.xml",
+                // "--meta-material-type", "meta_diffuse",
+                // "--metalog-dir", "...",
+                // Meta Roughconductor
+                // "--meta-material-type", "meta_roughconductor",
+                // "--reference-bsdf-scene", "scenes/matpreview/scene_mitsuba_rough_conductor_sample_visible_mis.xml",
+                // "--metalog-dir", "output/bounded/meta_roughconductor_reparam/phi/2026-05-06/12-02-11",
+                // Meta Measured
+                "--reference-bsdf-scene", "scenes/matpreview/scene_mitsuba_measured_mis.xml",
+                "--meta-material-type", "meta_epfl_measured",
+                "--measured-material-path", "measured_materials/DupuyAndJakob2018/isotropic_rgb/cc_nothern_aurora_rgb.bsdf",
+                "--metalog-dir", "output/bounded/meta_epfl_measured_reparam_cc_nothern_aurora_rgb/phi/2026-08-13/07-01-31",
+                // "--measured-material-path", "measured_materials/DupuyAndJakob2018/anisotropic_rgb/aniso_sari_silk_2color_rgb.bsdf",
+                // "--metalog-dir", "...",
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+            // bash
+            // python -m scripts.fit.run_meta_bsdf_maker \
+            //     --material-type measured \
+            //     --material-name meta_epfl_measured \
+            //     --measured-material-path measured_materials/DupuyAndJakob2018/isotropic_rgb/cc_nothern_aurora_rgb.bsdf \
+            //     --min-regularization-marginal 0.0001 \
+            //     --max-regularization-marginal 0.0001 \
+            //     --min-regularization-conditional 0.0001 \
+            //     --max-regularization-conditional 0.0001 \
+            //     --max-num-terms 6 \
+            //     --min-metalog-resolution-marginal 16 \
+            //     --max-metalog-resolution-marginal 16 \
+            //     --min-metalog-resolution-conditional 16 \
+            //     --max-metalog-resolution-conditional 16 \
+            //     --n-conditionals 6 \
+            //     --ml-phi-res -1 \
+            //     --ml-theta-res -1 \
+            //     --dhr-phi-res 1 \
+            //     --dhr-theta-res 16 \
+            //     --metalog-marginal phi \
+            //     --make-probs-method classic \
+            //     --rusinkiewicz-reparam true \
+            //     --no-plots \
+            //     --n-samples 512000 \
+            //     --marginal-mode mixture \
+            //     --conditional-mode mixture \
+            //     --mix-k-marg 2 \
+            //     --mix-k-cond 1 \
+            //     --mix-metalog-term-marg 6 \
+            //     --mix-metalog-term-cond 8 \
+            //     --mix-alpha 0.3 \
+            //     --mix-max-iters 30 \
+            //     --mixture-model auto
+            // DOS
+            // python -m scripts.fit.run_meta_bsdf_maker ^
+            //     --material-type measured ^
+            //     --material-name meta_epfl_measured ^
+            //     --measured-material-path measured_materials/DupuyAndJakob2018/isotropic_rgb/cc_nothern_aurora_rgb.bsdf ^
+            //     --min-regularization-marginal 0.0001 ^
+            //     --max-regularization-marginal 0.0001 ^
+            //     --min-regularization-conditional 0.0001 ^
+            //     --max-regularization-conditional 0.0001 ^
+            //     --max-num-terms 6 ^
+            //     --min-metalog-resolution-marginal 16 ^
+            //     --max-metalog-resolution-marginal 16 ^
+            //     --min-metalog-resolution-conditional 16 ^
+            //     --max-metalog-resolution-conditional 16 ^
+            //     --n-conditionals 6 ^
+            //     --ml-phi-res -1 ^
+            //     --ml-theta-res -1 ^
+            //     --dhr-phi-res 1 ^
+            //     --dhr-theta-res 16 ^
+            //     --metalog-marginal phi ^
+            //     --make-probs-method classic ^
+            //     --rusinkiewicz-reparam true ^
+            //     --no-plots ^
+            //     --n-samples 512000 ^
+            //     --marginal-mode mixture ^
+            //     --conditional-mode mixture ^
+            //     --mix-k-marg 2 ^
+            //     --mix-k-cond 1 ^
+            //     --mix-metalog-term-marg 6 ^
+            //     --mix-metalog-term-cond 8 ^
+            //     --mix-alpha 0.3 ^
+            //     --mix-max-iters 30 ^
+            //     --mixture-model auto
+        },
+        {
+            "name": "MetalogMetaSVBSDF",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.render.metalog_meta_svbsdf_test",
+            "args": [
+                "--metalog-bsdf-scene", "scenes/matpreview/scene_metalog_meta_svbrdf_mis.xml",
+                "--spp", "2048",
+                "--metalog-marginal", "phi",
+                "--film-width", "512",
+                "--film-height", "512",
+                "--meta-material-type-A", "meta_epfl_measured",
+                "--meta-material-type-B", "meta_epfl_measured",
+                "--metalog-dir-A", "...",
+                "--metalog-dir-B", "...",
+                "--blend-texture-path", "scenes/matpreview/textures/perlin_noise.png",
+                "--rusinkiewicz-reparam"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+            // bash
+            // python -m scripts.render.metalog_meta_bsdf_test \
+            //     --metalog-bsdf-scene scenes/matpreview/scene_metalog_meta_mis.xml \
+            //     --spp 512 \
+            //     --ref-spp-high 2048 \
+            //     --metalog-term 5 \
+            //     --marginal-mode mixture \
+            //     --conditional-mode mixture \
+            //     --metalog-marginal phi \
+            //     --benchmark-runs 1 \
+            //     --metric FLIP \
+            //     --output-format both \
+            //     --save-images \
+            //     --mis-active true \
+            //     --rusinkiewicz-reparam \
+            //     --film-width 512 \
+            //     --film-height 512 \
+            //     --reference-bsdf-scene scenes/matpreview/scene_mitsuba_measured_mis.xml \
+            //     --meta-material-type meta_epfl_measured \
+            //     --measured-material-path measured_materials/DupuyAndJakob2018/isotropic_rgb/cc_nothern_aurora_rgb.bsdf \
+            //     --metalog-dir output/bounded/meta_epfl_measured_reparam_cc_nothern_aurora_rgb/phi/2026-08-13/07-01-31
+            // DOS
+            // python -m scripts.render.metalog_meta_bsdf_test ^
+            //     --metalog-bsdf-scene scenes/matpreview/scene_metalog_meta_mis.xml ^
+            //     --spp 512 ^
+            //     --ref-spp-high 2048 ^
+            //     --metalog-term 5 ^
+            //     --marginal-mode mixture ^
+            //     --conditional-mode mixture ^
+            //     --metalog-marginal phi ^
+            //     --benchmark-runs 1 ^
+            //     --metric FLIP ^
+            //     --output-format both ^
+            //     --save-images ^
+            //     --mis-active true ^
+            //     --rusinkiewicz-reparam ^
+            //     --film-width 512 ^
+            //     --film-height 512 ^
+            //     --reference-bsdf-scene scenes/matpreview/scene_mitsuba_measured_mis.xml ^
+            //     --meta-material-type meta_epfl_measured ^
+            //     --measured-material-path measured_materials/DupuyAndJakob2018/isotropic_rgb/cc_nothern_aurora_rgb.bsdf ^
+            //     --metalog-dir output/bounded/meta_epfl_measured_reparam_cc_nothern_aurora_rgb/phi/2026-08-13/08-10-23
+        },
+    ]
+}

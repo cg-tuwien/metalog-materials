@@ -1,0 +1,15 @@
+--extra-index-url https://download.pytorch.org/whl/cu126
+
+# General dependencies
+matplotlib
+typing_extensions
+scikit-image
+psutil
+tqdm
+mitsuba
+flip-evaluator
+nvidia-ml-py
+
+# PyTorch (CUDA 12.6)
+torch
+torchvision

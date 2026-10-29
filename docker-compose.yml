@@ -1,0 +1,31 @@
+# © 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai
+
+services:
+  mlm:
+    build: .
+    image: ml-materials
+    # Run as the host user so files in ./output are owned by you (Linux).
+    # Export UID/GID first, e.g. `export UID GID=$(id -g)`; defaults to root.
+    user: "${UID:-0}:${GID:-0}"
+    working_dir: /workspace
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace
+        read_only: true
+      - type: bind
+        source: ./output
+        target: /workspace/output
+      - drjit-cache:/home/mlm/.drjit
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    stdin_open: true
+    tty: true
+
+volumes:
+  drjit-cache:

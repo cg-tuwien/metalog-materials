@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Metalog Materials"
+authors:
+  - family-names: Hasbay
+    given-names: Saip-Can
+  - family-names: Sakai
+    given-names: Hiroyuki
+repository-code: "https://github.com/cg-tuwien/Metalog-Materials"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Sakai
+      given-names: Hiroyuki
+    - family-names: Hasbay
+      given-names: Saip-Can
+    - family-names: Freude
+      given-names: Christian
+    - family-names: Wimmer
+      given-names: Michael
+    - family-names: Hahn
+      given-names: David
+  title: "Metalog Materials"
+  journal: "ACM Transactions on Graphics"
+  volume: 45
+  issue: 6
+  year: 2026
+  doi: "10.1145/3842563"
+references:
+  - type: thesis
+    thesis-type: "Diploma Thesis"
+    authors:
+      - family-names: Hasbay
+        given-names: Saip-Can
+    title: "The Fellowship of Metalog BSDFs"
+    institution:
+      name: "Technische Universität Wien"
+    year: 2026
+    doi: "10.34726/hss.2026.134821"

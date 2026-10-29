@@ -1,0 +1,14 @@
+name: mlm_venv
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - matplotlib
+  - typing_extensions
+  - scikit-image
+  - tqdm
+  - pip
+  - pip:
+    - mitsuba
+    - flip-evaluator
+    - nvidia-ml-py

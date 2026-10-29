@@ -1,0 +1,3 @@
+[submodule "extern/brdf-loader"]
+	path = extern/brdf-loader
+	url = https://github.com/rgl-epfl/brdf-loader.git

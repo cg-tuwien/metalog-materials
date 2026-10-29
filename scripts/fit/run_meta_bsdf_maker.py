@@ -198,7 +198,7 @@ def init_args():
         "--max-metalog-resolution-conditional",
         type=int,
         default=6,
-        help="Maximum resolution for generating conditional metalogs (default: 32)",
+        help="Maximum resolution for generating conditional metalogs (default: 6)",
     )
     p.add_argument(
         "--n-conditionals",

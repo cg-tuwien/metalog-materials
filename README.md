@@ -99,6 +99,7 @@ docker run --rm -it --gpus all \
   -v drjit-cache:/home/mlm/.drjit \
   ml-materials
 ```
+This command does not include the OptiX libraries needed on Windows (WSL2). There, use Docker Compose as described below or additionally mount `.optix-wsl/` as done in [docker-compose.wsl.yml](docker-compose.wsl.yml).
 
 #### Windows (Docker Desktop / WSL2)
 
@@ -244,6 +245,7 @@ Results (images and metrics) are written to `output/render/metalog_meta_bsdf_tes
 - `--marginal-mode`, `--conditional-mode`, `--metalog-marginal`, `--rusinkiewicz-reparam`: Must match the values used for precomputation.
 - `--mis-active true|false`: Enables multiple importance sampling.
 - `--metric`: Image metric used for the comparison, e.g., `FLIP`.
+- `--no-show`: Do not open the interactive matplotlib comparison windows. Without it, `plt.show()` blocks until the windows are closed; use this flag for unattended or headless runs (it is what [scripts/run_examples.py](scripts/run_examples.py) uses).
 - `--save-images`: Also saves the individual renderings and error maps as PNG files. Without it, only the comparison plots (SVG) and the metrics are written.
 - `--output-format json|csv|both` (default: `both`): Format of the metrics files (`results.json`; `metrics.csv`, `timings.csv`, `memory.csv`, `metrics_all.csv`).
 
@@ -267,5 +269,7 @@ Results (images and metrics) are written to `output/render/metalog_meta_bsdf_tes
 
 | OS | Python | PyTorch |
 |---|---|---|
-| Windows | 3.13.14 | 2.13.0+cu126 |
+| Windows | 3.13.14 | 2.14.1+cu126 (pinned in [requirements.txt](requirements.txt)) |
 | Linux | 3.13.9 | 2.9.0+cu126 |
+
+`requirements.txt` pins the CUDA 12.6 builds of PyTorch; without the pin, pip installs the default CUDA 13 build from PyPI. The pip, conda and Docker setups were additionally verified on Windows (driver 591.86; Docker via Docker Desktop / WSL2, running Linux Python 3.13 with PyTorch 2.14.1+cu126) by running `python -m scripts.run_examples`.

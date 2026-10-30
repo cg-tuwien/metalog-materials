@@ -273,3 +273,10 @@ Results (images and metrics) are written to `output/render/metalog_meta_bsdf_tes
 | Linux | 3.13.9 | 2.9.0+cu126 |
 
 `requirements.txt` pins the CUDA 12.6 builds of PyTorch; without the pin, pip installs the default CUDA 13 build from PyPI. The pip, conda and Docker setups were additionally verified on Windows (driver 591.86; Docker via Docker Desktop / WSL2, running Linux Python 3.13 with PyTorch 2.14.1+cu126) by running `python -m scripts.run_examples`.
+
+## Acknowledgments
+
+We thank Thomas Keelin for valuable discussions regarding metalog distributions.
+We also thank the creators of the scenes used in this work: [Jay-Artist](https://blendswap.com/profile/1574) for "[The White Room](https://blendswap.com/blend/5014)" (shown in the teaser image), and [Wenzel Jakob](https://rgl.epfl.ch/people/wjakob) and Jonas Pilo for "[Material Preview](https://mitsuba.readthedocs.io/en/stable/src/gallery.html)" (used for rendering in this repository), illuminated by the environment map "[At the Window](https://dativ.at/lightprobes/)" by [Bernhard Vogl](https://dativ.at/).
+
+This work has been funded by the Vienna Science and Technology Fund (WWTF) [Grant ID: 1047379/ICT22028]. This research was funded in whole or in part by the Austrian Science Fund (FWF) [[10.55776/F77](https://doi.org/10.55776/F77)].

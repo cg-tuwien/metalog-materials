@@ -23,7 +23,7 @@ git clone --recurse-submodules https://github.com/cg-tuwien/Metalog-Materials.gi
 cd Metalog-Materials
 ```
 
-If you cloned without `--recurse-submodules`, fetch the submodules afterwards:
+If you cloned without `--recurse-submodules`, fetch the submodules afterward:
 ```bash
 git submodule update --init --recursive
 ```

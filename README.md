@@ -19,8 +19,8 @@ With the focus on research, this code is not intended for production. We appreci
 
 Clone the repository including its submodules:
 ```bash
-git clone --recurse-submodules https://github.com/cg-tuwien/Metalog-Materials.git
-cd Metalog-Materials
+git clone --recurse-submodules https://github.com/cg-tuwien/metalog-materials.git
+cd metalog-materials
 ```
 
 If you cloned without `--recurse-submodules`, fetch the submodules afterward:

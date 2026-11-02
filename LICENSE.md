@@ -1,4 +1,4 @@
-Required Notice: Copyright 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai (https://github.com/cg-tuwien/Metalog-Materials)
+Required Notice: Copyright 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai (https://github.com/cg-tuwien/metalog-materials)
 
 # PolyForm Noncommercial License 1.0.0
 

@@ -1,4 +1,5 @@
 # © 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 
 # --- Memory sampler: CPU resident set size (RSS) + GPU VRAM (NVML) -------------------
 import os, time, threading

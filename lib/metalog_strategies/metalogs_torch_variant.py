@@ -1,4 +1,5 @@
 # © 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 
 from lib.metalog_strategies.metalogs_variant import MetalogsVariant
 import drjit as dr

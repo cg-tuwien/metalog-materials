@@ -1,4 +1,5 @@
 # © 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 
 # Override for Docker Desktop on Windows (WSL2): mounts the OptiX libraries
 # extracted by scripts/docker/setup_optix_wsl.sh. Not needed on Linux hosts.

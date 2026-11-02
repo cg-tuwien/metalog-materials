@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1
 # © 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 #
 # Runtime environment for Metalog Materials.
 # The image contains no repository code: mount the repo root read-only at

@@ -1,4 +1,5 @@
 # © 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 
 """
 Metalog Meta-BSDF benchmark & comparison tool

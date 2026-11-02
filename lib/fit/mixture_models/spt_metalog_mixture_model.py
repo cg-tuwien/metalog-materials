@@ -1,4 +1,5 @@
 # © 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 
 import torch
 from lib.fit.mixture_models.metalog_mixture_model import MetalogMixtureModel1D

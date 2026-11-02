@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # © 2025-2026 Saip-Can Hasbay, Hiroyuki Sakai
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 
 #
 # Provide OptiX libraries for the Docker container on Windows (WSL2 backend).

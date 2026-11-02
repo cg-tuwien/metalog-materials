@@ -3,24 +3,9 @@ output/*
 __pycache__
 *.DS_Store
 *.pt
-*.pickle
 *.bsdf
 *.exr
 *.log
-*.ipynb_checkpoints
-docs/papers/*
-!docs/papers/README.md
-tmp.ipynb
-tmp.py
-docs/pvc-report-images/epfl_isotropic_materials_rgb/*
-docs/thesis_figures
-docs/hasbay_reports
-experiments/08-diff-rendering/output
-experiments/05-analytic-metalog-bsdfs/plots
-experiments/09-meta-brdf-editing/output
-experiments/10-meta-brdf-interpolation/output
-ml_materials_lib.egg-info
-scenes/sakai-freude-box/reference
 .optix-wsl/
 .env
 # Mitsuba matpreview scene, downloaded via scripts/download_matpreview.py

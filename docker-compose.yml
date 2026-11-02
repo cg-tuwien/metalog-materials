@@ -4,7 +4,7 @@
 services:
   mlm:
     build: .
-    image: ml-materials
+    image: metalog-materials
     # Run as the host user so files in ./output are owned by you (Linux).
     # Export UID/GID first, e.g. `export UID GID=$(id -g)`; defaults to root.
     user: "${UID:-0}:${GID:-0}"

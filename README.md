@@ -91,13 +91,13 @@ Then:
 
 To run the container without Docker Compose:
 ```bash
-docker build -t ml-materials .
+docker build -t metalog-materials .
 docker run --rm -it --gpus all \
   --user "$(id -u):$(id -g)" \
   -v "$PWD":/workspace:ro \
   -v "$PWD/output":/workspace/output \
   -v drjit-cache:/home/mlm/.drjit \
-  ml-materials
+  metalog-materials
 ```
 This command does not include the OptiX libraries needed on Windows (WSL2). There, use Docker Compose as described below or additionally mount `.optix-wsl/` as done in [docker-compose.wsl.yml](docker-compose.wsl.yml).
 
@@ -278,6 +278,7 @@ Results (images and metrics) are written to `output/render/metalog_meta_bsdf_tes
 
 This code is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE.md): you may use, modify, and share it for noncommercial purposes such as research, teaching, and personal projects. For commercial use, please [contact us](https://www.cg.tuwien.ac.at/staff/HiroyukiSakai).
 The measured materials, the matpreview scene, and the [BRDF loader](extern/brdf-loader/) submodule are not covered by this license (see [Data](#data)).
+The texture [`perlin_noise.png`](scenes/matpreview/textures/perlin_noise.png) is [`example-4-1.png`](https://github.com/sighack/perlin-noise-fields/blob/master/images/png/example-4-1.png) from [perlin-noise-fields](https://github.com/sighack/perlin-noise-fields) by [Manohar Vanga](https://sighack.com/post/getting-creative-with-perlin-noise-fields) and distributed under the [MIT License](scenes/matpreview/textures/LICENSE-perlin_noise.txt).
 
 ## Acknowledgments
 

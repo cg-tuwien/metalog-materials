@@ -274,6 +274,11 @@ Results (images and metrics) are written to `output/render/metalog_meta_bsdf_tes
 
 `requirements.txt` pins the CUDA 12.6 builds of PyTorch; without the pin, pip installs the default CUDA 13 build from PyPI. The pip, conda and Docker setups were additionally verified on Windows (driver 591.86; Docker via Docker Desktop / WSL2, running Linux Python 3.13 with PyTorch 2.14.1+cu126) by running `python -m scripts.run_examples`.
 
+## License
+
+This code is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE.md): you may use, modify, and share it for noncommercial purposes such as research, teaching, and personal projects. For commercial use, please [contact us](https://www.cg.tuwien.ac.at/staff/HiroyukiSakai).
+The measured materials, the matpreview scene, and the [BRDF loader](extern/brdf-loader/) submodule are not covered by this license (see [Data](#data)).
+
 ## Acknowledgments
 
 We thank Thomas Keelin for valuable discussions regarding metalog distributions.

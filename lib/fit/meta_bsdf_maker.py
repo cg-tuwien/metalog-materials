@@ -617,7 +617,7 @@ class MetaBSDFMaker:
                     sample_metalogs_dict["marginal"],
                 )
                 logging.info(
-                    f"({log_info}/wo) Marginal metalog errors: \n{sample_metalogs_dict["marginal_score"]}"
+                    f"({log_info}/wo) Marginal metalog errors: \n{sample_metalogs_dict['marginal_score']}"
                 )
 
         return result_sample
@@ -983,7 +983,7 @@ class MetaBSDFMaker:
         bounded_dir = f"{resources_dir}/{is_bounded_str}"
         reparam_label = "_reparam" if self.rusinkiewicz_reparam else ""
         measured_material_label = (
-            f"_{self.measured_material_name.split(".")[0]}"
+            f"_{self.measured_material_name.split('.')[0]}"
             if self.measured_material_name != None
             and self.measured_material_name != "None"
             else ""

@@ -4,7 +4,7 @@
 
 This repository contains the implementation of our research paper [Metalog Materials](https://www.cg.tuwien.ac.at/MM) [Sakai\*, Hasbay\*, et al. 2026] (\* joint first authors).
 It precomputes metalog-based BRDFs (e.g., measured materials from the [RGL database](https://rgl.epfl.ch/materials)) and renders them with [Mitsuba 3](https://www.mitsuba-renderer.org/), comparing the result against the reference material.
-The diploma thesis [The Fellowship of Metalog BSDFs](https://doi.org/10.34726/hss.2026.134821) [Hasbay 2026] is a precursor of the paper and covers some aspects in greater detail.
+The diploma thesis [The Fellowship of Metalog BSDFs](https://doi.org/10.34726/hss.2026.134821) [Hasbay 2026] is a precursor to the paper and covers some aspects in greater detail.
 BibTeX entries for both are in [CITATION.bib](CITATION.bib).
 
 With the focus on research, this code is not intended for production. We appreciate your feedback, questions, and reports of any issues you encounter; feel free to [contact us](https://www.cg.tuwien.ac.at/staff/HiroyukiSakai)!
